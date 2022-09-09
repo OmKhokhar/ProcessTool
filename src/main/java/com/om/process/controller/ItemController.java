@@ -41,7 +41,7 @@ public class ItemController
         item.setId(id);
 
         //add resource
-        itemDao.addItem(item);
+        itemDao.addItems(item);
 
         //Create resource location
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()

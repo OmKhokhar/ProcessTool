@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import com.om.process.model.ItemList;
 
+import java.util.Objects;
+
 @Repository
 public class ItemDao
 {
@@ -12,9 +14,11 @@ public class ItemDao
 
     static
     {
-        list.getItemLists().add(new Item(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com"));
-        list.getItemLists().add(new Item(2, "Alex", "Kolenchiskey", "abc@gmail.com"));
-        list.getItemLists().add(new Item(3, "David", "Kameron", "titanic@gmail.com"));
+        list.getItemLists().add(new Item(1, "Protein" , "Helps in building muscles", 80));
+
+        list.getItemLists().add(new Item(2, "Creatine", "Helps in body building", 30));
+
+        list.getItemLists().add(new Item(3, "Energy Drink", "Contains caffeine", 45));
     }
 
     public ItemList getAllItemList()
@@ -22,11 +26,26 @@ public class ItemDao
         return list;
     }
 
-    public void addEmployee(Item item) {
+    public static void addItems(Item item){
+
+        list.getItemLists().add(item);
+    }
+    public void addItem(Item item) {
         list.getItemLists().add(item);
     }
 
-    public void addItem(Item item) {
+    public Item updateItem(String id, Item data){
 
+        Item item = null;
+
+        for (int i=0; i<list.getItemLists().size(); ++i)
+            if (Objects.equals(list.getItemLists().get(i).getId(), id))
+        {
+            item = list.getItemLists().get(i);
+        }
+            return item;
+        }
     }
-}
+
+
+

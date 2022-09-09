@@ -2,22 +2,21 @@ package com.om.process.model;
 
 public class Item {
 
-    public Item() {
-
-    }
-
-    public Item(Integer id, String firstName, String lastName, String email) {
+    public Item(Integer id, String product, String desc, Integer price) {
         super();
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        this.product = product;
+        this.desc = desc;
+        this.price = price;
     }
 
     private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
+
+    private String product;
+
+    private String desc;
+
+    private Integer price;
 
     public Integer getId() {
         return id;
@@ -27,33 +26,33 @@ public class Item {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getProduct() {
+        return product;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setProduct(String Product) {
+        this.product = product;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDesc(String Desc) {
+        this.desc = desc;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Item [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+        return "Item [id=" + id + ", product=" + product + ", desc=" + desc + ", price=" + price + "]";
     }
 }
 
